@@ -15,7 +15,7 @@ describe('Conversor de moedas - mock de modulo', () => {
     it('Deve converter usando a taxa devolvida pela API', async () => {
 
         axios.get.mockResolvedValue({
-            
+
             data: { amount: 1, base: 'USD', rates: { BRL: 5 } },
         });
 
@@ -29,4 +29,5 @@ describe('Conversor de moedas - mock de modulo', () => {
 
         await expect(converterMoeda(10, 'USD', 'BRL')).rejects.toThrow('Network Error');
     });
+    
 });
